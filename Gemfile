@@ -5,7 +5,9 @@ gem 'mysql2'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem "minitest-rails"
+
 group :development, :test do
+  gem 'guard-livereload', require: false
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
