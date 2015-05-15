@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">Payment Info</h4>
+</div>
+
+<div class="modal-body">
+  <div class="form-group street">
+    <%= f.label :name_on_card %>
+    <%= f.text_field :name_on_card %>
+  </div>
+  <div class="form-group street">
+    <%= f.label :card_number %>
+    <%= f.text_field :card_number %>
+  </div>
+  <div class="form-group city">
+    <%= f.label :card_expires %>
+    <%= f.text_field :card_expires %>
+  </div>
+  <div class="form-group state">
+    <%= f.label :card_security %>
+    <%= f.text_field :card_security %>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <a type="button" class="btn btn-default prev">Back</a>
+  <a class="btn btn-primary next">Send them Here</a>
+</div>

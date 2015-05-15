@@ -1,0 +1,24 @@
+<div class="modal fade" id="orderModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for Order.new do |f| %>
+        <div class="carousel slide">
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= render :partial => 'step_1', locals: {f: f} %>
+            </div>
+            <div class="item">
+              <%= render :partial => 'step_2', locals: {f: f} %>
+            </div>
+            <div class="item">
+              <%= render :partial => 'step_3', locals: {f: f} %>
+            </div>
+            <div class="item">
+              <%= render :partial => 'step_4', locals: {f: f} %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
