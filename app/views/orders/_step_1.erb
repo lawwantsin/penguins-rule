@@ -6,7 +6,7 @@
 <div class="modal-body">
   <div class="form-group qty">
     <label for=""></label>
-    <%= f.text_field :quantity, :value => '1' %>
+    <%= f.text_field :quantity, 'ng-model' => 'order.quantity' %>
   </div>
 </div>
 

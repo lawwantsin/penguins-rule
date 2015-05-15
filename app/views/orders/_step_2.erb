@@ -6,33 +6,33 @@
 <div class="modal-body">
   <div class="form-group street">
     <%= f.label :shipping_name, "Ship to Name" %>
-    <%= f.text_field :shipping_name %>
+    <%= f.text_field :shipping_name, 'ng-model' => 'order.shipping_name' %>
   </div>
   <div class="form-group street">
     <%= f.label :shipping_street, "Street Address" %>
-    <%= f.text_field :shipping_street %>
+    <%= f.text_field :shipping_street, 'ng-model' => 'order.shipping_street' %>
   </div>
   <div class="form-group city">
     <%= f.label :shipping_city, "City" %>
-    <%= f.text_field :shipping_city %>
+    <%= f.text_field :shipping_city, 'ng-model' => 'order.shipping_city' %>
   </div>
   <div class="row">
     <div class="col col-xs-8">
       <div class="form-group state">
         <%= f.label :shipping_state, "State" %>
-        <%= f.text_field :shipping_state %>
+        <%= f.text_field :shipping_state, 'ng-model' => 'order.shipping_state' %>
       </div>
     </div>
     <div class="col col-xs-4">
       <div class="form-group zip">
         <%= f.label :shipping_zip, "Zip Code" %>
-        <%= f.text_field :shipping_zip %>
+        <%= f.text_field :shipping_zip, 'ng-model' => 'order.shipping_zip' %>
       </div>
     </div>
   </div>
   <div class="form-group country">
     <%= f.label :shipping_country, 'Country' %>
-    <%= f.text_field :shipping_country %>
+    <%= f.text_field :shipping_country, 'ng-model' => 'order.shipping_country' %>
   </div>
 </div>
 

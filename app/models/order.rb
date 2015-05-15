@@ -25,5 +25,27 @@
 
 class Order < ActiveRecord::Base
 
+  after_create :push_data
+
+
+
+  def push_data
+
+    Pusher.trigger('orders', 'new_order', {
+      name: self.first_name,
+      quantity: self.quantity,
+      city: self.shipping_city,
+      country: self.shipping_country,
+      timestamp: self.created_at
+    })
+
+  end
+
+  def first_name
+
+    self.name_on_card.split(' ').first
+
+  end
+
 
 end
