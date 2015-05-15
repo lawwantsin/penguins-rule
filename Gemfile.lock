@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    ansi (1.5.0)
     arel (6.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -90,6 +91,11 @@ GEM
     minitest-rails (2.1.1)
       minitest (~> 5.4)
       railties (~> 4.1)
+    minitest-reporters (1.0.16)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.11.0)
     mysql2 (0.3.18)
     nenv (0.2.0)
@@ -133,6 +139,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    ruby-progressbar (1.7.5)
     sass (3.4.13)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -172,6 +179,7 @@ DEPENDENCIES
   byebug
   guard-livereload
   minitest-rails
+  minitest-reporters
   mysql2
   rails (= 4.2.1)
   sass-rails (~> 5.0)
