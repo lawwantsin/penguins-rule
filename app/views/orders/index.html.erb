@@ -1,13 +1,53 @@
+<header>
+  <%= raw clouds %>
+  <div class="logo">
+
+  </div>
+</header>
 <div class="container">
   <div class="row">
     <div class="col col-xs-12 col-sm-6">
-      <div class="buy">
-        <h1>Buy for $4.99</h1>
-        <a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orderModal">Buy Now</a>
+      <div class="product">
+        <%= image_tag "penguin-1-big.png", id: 'penguin' %>
+        <div class="cta">
+          <p>
+            Fold out penguin box.
+          </p>
+          <p>
+            100% Organic Fruit Juice.
+          </p>
+          <p>
+            For the coolest kids in the lunchroom.
+          </p>
+        </div>
+        <div class="buy">
+          <h2>$2.99 Each</h2>
+          <p>
+            3 colors to choose from.
+          </p>
+          <a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orderModal">Buy Now</a>
+        </div>
       </div>
     </div>
     <div class="col col-xs-12 col-sm-6">
-
+      <ul class='egg-holder'>
+        <%- @recent_orders.each do |order| %>
+          <li class='egg'>
+            <div class="quantity">
+              <%= order.quantity %>
+            </div>
+            <div class="first-name">
+              <%= order.first_name %>
+            </div>
+            <div class="shipping-city">
+              <%= order.shipping_city %>
+            </div>
+            <div class="shipping-country">
+              <%= order.shipping_country %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def index
+    @recent_orders = Order.recent_orders
   end
 
   def create

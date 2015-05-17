@@ -32,18 +32,27 @@ class Order < ActiveRecord::Base
   def push_data
 
     Pusher.trigger('orders', 'new_order', {
-      name: self.first_name,
+      first_name: self.first_name,
       quantity: self.quantity,
-      city: self.shipping_city,
-      country: self.shipping_country,
-      timestamp: self.created_at
+      shipping_city: self.shipping_city,
+      shipping_country: self.shipping_country,
+      created_at: self.created_at
     })
 
   end
 
   def first_name
 
-    self.name_on_card.split(' ').first
+    self.shipping_name.split(' ').first.capitalize
+
+  end
+
+  def self.recent_orders
+
+    return order('created_at DESC')
+              .limit(20)
+              .select('shipping_name, quantity, shipping_city, shipping_name, created_at, shipping_country')
+              .all
 
   end
 

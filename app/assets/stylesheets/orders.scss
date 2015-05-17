@@ -2,9 +2,88 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$iceblue: #3a98ec;
+$yolk: #fcb316;
+
 .modal-body {
   min-height: 400px;
 }
 label {
   display: block;
+}
+header {
+  background-color: lightblue;
+  height: 300px;
+  width: 100%;
+}
+.egg-holder {
+  position: relative;
+}
+.egg {
+  position: relative;
+  list-style: none;
+  border: 4px solid $iceblue;
+  padding: 0;
+  width: 115px;
+	height: 155px;
+	margin: 20px;
+  float: left;
+	-webkit-border-radius: 50%/60% 60% 40% 40%;
+	-moz-border-radius: 50%/60% 60% 40% 40%;
+	border-radius: 50%/60% 60% 40% 40%;
+  text-align: center;
+  .quantity {
+    background-color: $yolk;
+    padding: 10px;
+    border-radius: 100%;
+    width: 80px;
+    color: white;
+    font-size: 2em;
+    position: absolute;
+    bottom: 5px;
+    margin-left: -40px;
+    left: 50%;
+  }
+  .first-name {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .shipping-name {
+
+  }
+  .shipping-city {
+
+  }
+}
+.btn-primary {
+  background-color: $iceblue;
+  font-size: 2em;
+}
+.cloud {
+  position: absolute;
+}
+.small-cloud {
+  width: 50px;
+}
+.medium-cloud {
+  width: 100px;
+}
+.big-cloud {
+  width: 150px;
+}
+.product {
+  position: relative;
+  min-height: 300px;
+}
+.buy {
+  position: absolute;
+  bottom: 0;
+}
+.cta {
+  font-size: 1.3em;
+  padding: 40px 0;
+}
+#penguin {
+  margin-top: -70px;
+  float: right;
 }
