@@ -1,36 +1,44 @@
 <header>
-  <%= raw clouds %>
-  <div class="logo">
-
+  <div class="cloud-panel">
+    <%= raw clouds %>
   </div>
+  <div class="mountains"></div>
 </header>
-<div class="container">
+<div class="fluid-container main">
   <div class="row">
     <div class="col col-xs-12 col-sm-6">
-      <div class="product">
-        <%= image_tag "penguin-1-big.png", id: 'penguin' %>
-        <div class="cta">
-          <p>
-            Fold out penguin box.
-          </p>
-          <p>
-            100% Organic Fruit Juice.
-          </p>
-          <p>
-            For the coolest kids in the lunchroom.
-          </p>
+      <div class="product row">
+        <div class="col col-xs-12 col-sm-6 col-sm-push-6">
+          <%= image_tag "penguin-1-big.png", id: 'penguin' %>
+          <a href="#" class="btn btn-primary btn-lg" id="buy-now" data-toggle="modal" data-target="#orderModal">Buy Now</a>
         </div>
-        <div class="buy">
-          <h2>$2.99 Each</h2>
-          <p>
-            3 colors to choose from.
-          </p>
-          <a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orderModal">Buy Now</a>
+
+        <div class="col col-xs-12 col-sm-6 col-sm-pull-6">
+          <div class="cta">
+            <p>
+              Fold-Out Penguin Joice Box.
+            </p>
+            <p>
+              100% Fruit Juice.
+            </p>
+            <p>
+              For the coolest kids in the lunchroom.
+            </p>
+            <%= image_tag 'penguin-3-colors.png', id:'colors' %>
+            <div class="buy">
+              <p>
+                4 colors to choose from!
+              </p>
+              <h2>$2.99 each</h2>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
     <div class="col col-xs-12 col-sm-6">
       <ul class='egg-holder'>
+        <h1>Look who just got theirs...</h1>
         <%- @recent_orders.each do |order| %>
           <li class='egg'>
             <div class="quantity">
@@ -51,4 +59,6 @@
     </div>
   </div>
 </div>
+<footer>
+</footer>
 <%= render :partial => 'order_modal' %>

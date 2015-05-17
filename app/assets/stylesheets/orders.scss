@@ -4,6 +4,19 @@
 
 $iceblue: #3a98ec;
 $yolk: #fcb316;
+$skyblue: #bcf8ff;
+
+
+.sky {
+  background: #05abe0; /* Old browsers */
+  background: -moz-linear-gradient(top,  #05abe0 0%, #53cbf1 60%, #87e0fd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#05abe0), color-stop(60%,#53cbf1), color-stop(100%,#87e0fd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#87e0fd',GradientType=0 ); /* IE6-9 */
+}
 
 .modal-body {
   min-height: 400px;
@@ -12,21 +25,47 @@ label {
   display: block;
 }
 header {
-  background-color: lightblue;
-  height: 300px;
   width: 100%;
+  position: relative;
+  height: 350px;
+  @extend .sky;
+  .mountains {
+    position: absolute;
+    bottom: 0;
+    background: image-url('bg.png') repeat-x bottom;
+    height: 350px;
+    width: 100%;
+    z-index: 2;
+  }
+  .clouds {
+    z-index: 1;
+  }
+}
+.main {
+  padding: 0 30px;
+  z-index: 2;
+  position: relative;
 }
 .egg-holder {
   position: relative;
+  top: 20px;
+  padding: 0;
+  margin: 0;
+  h1 {
+    color: $iceblue;
+    text-align: left;
+    font-size: 1.3em;
+  }
 }
 .egg {
   position: relative;
   list-style: none;
   border: 4px solid $iceblue;
+  background-color: #fff;
   padding: 0;
   width: 115px;
 	height: 155px;
-	margin: 20px;
+	margin: 10px;
   float: left;
 	-webkit-border-radius: 50%/60% 60% 40% 40%;
 	-moz-border-radius: 50%/60% 60% 40% 40%;
@@ -57,33 +96,44 @@ header {
 }
 .btn-primary {
   background-color: $iceblue;
+}
+.btn {
   font-size: 2em;
+}
+.cloud-panel {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
 }
 .cloud {
   position: absolute;
-}
-.small-cloud {
-  width: 50px;
-}
-.medium-cloud {
-  width: 100px;
-}
-.big-cloud {
-  width: 150px;
 }
 .product {
   position: relative;
   min-height: 300px;
 }
 .buy {
-  position: absolute;
-  bottom: 0;
+  h2 {
+    margin: 0;
+  }
 }
 .cta {
   font-size: 1.3em;
   padding: 40px 0;
 }
 #penguin {
-  margin-top: -70px;
-  float: right;
+  margin-top: -30px;
+}
+#colors {
+  width: 100%;
+}
+#buy-now {
+  margin-top: 10px;
+}
+
+footer {
+  background: transparent image-url('cliff.jpg');
+  height: 200px;
+  position: relative;
+  width: 100%;
 }

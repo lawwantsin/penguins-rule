@@ -28,7 +28,11 @@ $(document).ready(function() {
     console.log(data);
   });
 
+  // Clouds animation
+    duration = 600;
+    TweenLite.to('.cloud-panel', duration, {left: '-100%'});
 })
+
 
 angular.module('bevTest', []);
 
