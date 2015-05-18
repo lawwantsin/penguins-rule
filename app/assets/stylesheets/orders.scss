@@ -21,7 +21,7 @@ $blue: #384c8a;
 }
 
 .modal-body {
-  min-height: 400px;
+  min-height: 630px;
 }
 label {
   display: block;
@@ -48,16 +48,17 @@ header {
   z-index: 2;
   position: relative;
 }
+h1 {
+  color: $iceblue;
+  text-align: center;
+  font-size: 1.3em;
+  margin-bottom: 0;
+}
 .egg-holder {
   position: relative;
   top: 20px;
   padding: 0;
   margin: 0;
-  h1 {
-    color: $iceblue;
-    text-align: center;
-    font-size: 1.3em;
-  }
 }
 .egg {
   position: relative;
@@ -89,7 +90,7 @@ header {
   }
   &:hover .timestamp {
     opacity: 1;
-    bottom: -20px;
+    bottom: -40px;
   }
   .quantity {
     background-color: $yolk;
@@ -120,6 +121,7 @@ header {
 .btn {
   font-size: 1.5em;
   padding: 10px 20px;
+  outline: none !important;
 }
 
 .cloud-panel {
@@ -167,6 +169,17 @@ header {
   left: 50%;
   margin-left: -15%;
 }
+.total-price {
+  float: left;
+  h2, label {
+    text-align: left;
+    margin: 0;
+  }
+  label {
+    color: $iceblue;
+  }
+}
+
 
 footer {
   background: transparent image-url('cliff.jpg');
@@ -186,17 +199,28 @@ form {
 
   .form-group {
     padding: 10px 20px;
+    position: relative;
   }
 
   input {
     padding: 15px;
     font-size: 1.5em;
+    letter-spacing: 1px;
     width: 100%;
     box-shadow: inset 0px 2px 20px rgba(0,0,0,0.1);
     border: none;
     background: #fff;
     border-radius: 3px;
     outline: none;
+  }
+
+  label.error {
+    color: $red;
+    position: absolute;
+    text-align: right;
+    top: 10px;
+    display: none;
+    right: 20px;
   }
 
   .step1 input {
@@ -213,4 +237,25 @@ form {
     color: $blue;
   }
 
+}
+
+.bounce {
+  -moz-animation:bounceOut 1s linear;
+  -webkit-animation:bounceOut 1s linear;
+}
+
+@-moz-keyframes bounceOut {
+  0%{ margin-top: -20px }
+  25%{ margin-top: 15px }
+  50%{ margin-top: 20px }
+  75%{ margin-top: 10px}
+  100%{ margin-top: 20px }
+}
+
+@-webkit-keyframes bounceOut {
+  0%{ margin-top: -20px }
+  25%{ margin-top: 15px }
+  50%{ margin-top: 20px }
+  75%{ margin-top: 10px}
+  100%{ margin-top: 20px }
 }

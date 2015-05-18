@@ -6,22 +6,26 @@
 <div class="modal-body step3">
   <div class="form-group name-on-card">
     <%= f.label :name_on_card, "Name on Card" %>
+    <label class="error">Required</label>
     <%= f.text_field :name_on_card, 'ng-model' => 'order.name_on_card', :required => true %>
   </div>
   <div class="form-group card-number">
     <%= f.label :card_number, "Card Number" %>
+    <label class="error">Required</label>
     <%= f.text_field :card_number, 'ng-model' => 'order.card_number', :required => true %>
   </div>
   <div class="row">
     <div class="col col-xs-6">
       <div class="form-group card-expires">
         <%= f.label :card_expires, 'Card Expires (MM/YYYY)' %>
+        <label class="error">Required</label>
         <%= f.text_field :card_expires, 'ng-model' => 'order.card_expires', :required => true %>
       </div>
     </div>
     <div class="col col-xs-6">
       <div class="form-group card-security">
         <%= f.label :card_security %>
+        <label class="error">Required</label>
         <%= f.text_field :card_security, 'ng-model' => 'order.card_security', :required => true %>
       </div>
     </div>
@@ -29,6 +33,10 @@
 </div>
 
 <div class="modal-footer">
+  <div class="total-price">
+    <label>Total Price</label>
+    <h2>${{ totalPrice() | number:2 }}</h2>
+  </div>
   <a type="button" class="btn btn-default prev">Back</a>
   <a class="btn btn-primary next">Charge Card</a>
 </div>

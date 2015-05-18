@@ -1,9 +1,9 @@
-ENV["RAILS_ENV"] = "test"
-require File.expand_path("../../config/environment", __FILE__)
-require "rails/test_help"
+ENV['RAILS_ENV'] = 'test'
+require File.expand_path('../../config/environment', __FILE__)
+require 'rails/test_help'
 
-require "minitest/rails"
-require "minitest/reporters"
+require 'minitest/rails'
+require 'minitest/reporters'
 Minitest::Reporters.use!
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
@@ -11,5 +11,5 @@ Minitest::Reporters.use!
 # require "minitest/rails/capybara"
 
 class ActiveSupport::TestCase
-    ActiveRecord::Migration.check_pending!
+  ActiveRecord::Migration.check_pending!
 end

@@ -10,31 +10,40 @@
     <div class="col col-xs-6 col-sm-3">
       <div class="form-group qty">
         <%= f.label :quantity_black, "Black", class: 'black' %>
-        <%= f.text_field :quantity_black, 'ng-model' => 'order.quantity_black' %>
+        <%= f.text_field :quantity_black, 'ng-model' => 'order.quantity_black', :required => true %>
       </div>
     </div>
     <div class="col col-xs-6 col-sm-3">
       <div class="form-group qty">
         <%= f.label :quantity_blue, "Blue", class: 'blue' %>
-        <%= f.text_field :quantity_blue, 'ng-model' => 'order.quantity_blue' %>
+        <%= f.text_field :quantity_blue, 'ng-model' => 'order.quantity_blue', :required => true %>
       </div>
     </div>
     <div class="col col-xs-6 col-sm-3">
       <div class="form-group qty">
         <%= f.label :quantity_red, "Red", class: 'red' %>
-        <%= f.text_field :quantity_red, 'ng-model' => 'order.quantity_red' %>
+        <%= f.text_field :quantity_red, 'ng-model' => 'order.quantity_red', :required => true %>
       </div>
     </div>
     <div class="col col-xs-6 col-sm-3">
       <div class="form-group qty">
         <%= f.label :quantity_green, "Green", class: 'green' %>
-        <%= f.text_field :quantity_green, 'ng-model' => 'order.quantity_green' %>
+        <%= f.text_field :quantity_green, 'ng-model' => 'order.quantity_green', :required => true %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-xs-12">
+      <h2 class="text-center">$<%= Order::PRICE %> each</h2>
     </div>
   </div>
 </div>
 
 <div class="modal-footer">
+  <div class="total-price">
+    <label>Total Price</label>
+    <h2>${{ totalPrice() | number:2 }}</h2>
+  </div>
   <a class="btn btn-default" data-dismiss="modal">Close</a>
   <a class="btn btn-primary next">I want, I want!</a>
 </div>

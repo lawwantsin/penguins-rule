@@ -29,27 +29,9 @@
       </div>
     </div>
     <div class="col col-xs-12 col-sm-6">
+      <h1>Look Who Just Got Theirs</h1>
       <ul class='egg-holder'>
-        <h1>Look Who Just Got Theirs</h1>
-        <%- @recent_orders.each do |order| %>
-          <li class='egg'>
-            <div class="timestamp">
-              <%= timeago_tag order.created_at, nojs: false %>
-            </div>
-            <div class="quantity">
-              <%= order.quantity %>
-            </div>
-            <div class="first-name">
-              <%= order.first_name %>
-            </div>
-            <div class="shipping-city">
-              <%= order.shipping_city %>
-            </div>
-            <div class="shipping-country">
-              <%= order.shipping_country %>
-            </div>
-          </li>
-        <% end %>
+        <%= render partial: 'order', collection: @recent_orders %>
       </ul>
     </div>
   </div>
@@ -57,3 +39,7 @@
 <footer>
 </footer>
 <%= render :partial => 'order_modal' %>
+<script>
+  var price = <%= Order::PRICE %>;
+</script>
+<%= render :partial => 'ng_order' %>

@@ -1,0 +1,17 @@
+<li class='egg'>
+  <div class="timestamp">
+    <%= timeago_tag order.created_at, nojs: true %>
+  </div>
+  <div class="quantity">
+    <%= order.quantity %>
+  </div>
+  <div class="first-name">
+    <%= order.first_name %>
+  </div>
+  <div class="shipping-city">
+    <%= order.shipping_city %>
+  </div>
+  <div class="shipping-country">
+    <%= order.shipping_country %>
+  </div>
+</li>

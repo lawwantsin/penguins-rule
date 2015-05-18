@@ -1,7 +1,7 @@
 <div class="modal fade" id="orderModal" ng-controller="OrderCtrl">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for Order.new do |f| %>
+      <%= form_for Order.new, html: {name: "orderForm"} do |f| %>
         <div class="carousel slide">
           <div class="carousel-inner">
             <div class="item active">

@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def index
     @recent_orders = Order.recent_orders
   end
@@ -15,7 +14,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-
     params.require(:order)
       .permit(:name_on_card,
               :card_number,
@@ -39,7 +37,5 @@ class OrdersController < ApplicationController
               :quantity_blue,
               :quantity_red,
               :quantity_green)
-
   end
-
 end
