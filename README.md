@@ -15,15 +15,19 @@ Type `guard` in terminal to start Livereload server
 Chrome Extension [here](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
 
 ## Tests
+
 Type `rake test` in terminal to run test suite
 
 ## Files
 
-All javascript is located in orders.js
-All functionality is related to the orders stack.
-workbench.erb is helpful to speed up designing tricky UI.
+All javascript logic is located in `orders.js`
+
+All functionality is in the _orders_ stack.
+
+`workbench.erb` is helpful to speed up designing tricky UI without excessive clicking.
 
 ## Make some fake orders
 
-Type `rake rake_orders` in Terminal.  
-Runs on an endless looop.  Control+C to quit.
+Type `rake fake_orders` in Terminal.
+
+Runs on an endless loop.  Control+C to quit.

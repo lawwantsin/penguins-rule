@@ -48,7 +48,7 @@ $(document).ready(function() {
   }
 
   // Validate a whole step.
-  var valid = function(step) {
+  window.valid = function(step) {
     var allFields = step.find('input[type=text]');
     var invalidFields = 0;
     allFields.each(function(i, field) {
@@ -82,19 +82,22 @@ $(document).ready(function() {
   });
 
   // Just to see it working.
-  Pusher.log = function(message) {
-    if (window.console && window.console.log) {
-      window.console.log(message);
-    }
-  };
+  // Pusher.log = function(message) {
+  //   if (window.console && window.console.log) {
+  //     window.console.log(message);
+  //   }
+  // };
 
   // Subscribe to new orders.
   var pusher = new Pusher('e6e4fd981b1a4f8f3fb8');
   var channel = pusher.subscribe('orders');
   channel.bind('new_order', function(data) {
+
+    // Little wait to make sure they see it.
     setTimeout(function() {
       addNewOrder(data);
     }, 1000);
+
   });
 
   // Clouds animation
@@ -117,7 +120,7 @@ var addNewOrder = function(data) {
 angular.module('bevTest', []);
 
 // Controller for the order model and form.
-angular.module('bevTest').controller('OrderCtrl', ['$scope', '$http', function($scope, $http) {
+angular.module('bevTest').controller('OrderCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
 
   // Default values for color quanities.
   $scope.order = {
@@ -143,12 +146,18 @@ angular.module('bevTest').controller('OrderCtrl', ['$scope', '$http', function($
   // Simple form submission via Angular $http.
   $scope.submitForm = function() {
 
+    // Make sure to validate the last step.
+    if (!$window.valid($('.step4'))) return;
+
+    // Submit the form
     var responsePromise = $http.post("/orders", $scope.order, {});
 
+    // On Success
     responsePromise.success(function(dataFromServer, status, headers, config) {
       $('#orderModal').modal('hide');
     });
 
+    // On Error, needs work, obv.
     responsePromise.error(function(data, status, headers, config) {
       console.log("Server Error");
     });

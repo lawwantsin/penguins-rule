@@ -6,28 +6,33 @@
 <div class="modal-body step4">
   <div class="form-group street">
     <%= f.label :billing_street, 'Billing Address' %>
+    <label class="error">Required</label>
     <%= f.text_field :billing_street, 'ng-model' => 'order.billing_street', 'required' => true %>
   </div>
   <div class="form-group city">
     <%= f.label :billing_city, 'Billing City' %>
+    <label class="error">Required</label>
     <%= f.text_field :billing_city, 'ng-model' => 'order.billing_city', :required => true  %>
   </div>
   <div class="row">
     <div class="col col-xs-7">
       <div class="form-group state">
         <%= f.label :billing_state, 'Billing State' %>
+        <label class="error">Required</label>
         <%= f.text_field :billing_state, 'ng-model' => 'order.billing_state', :required => true  %>
       </div>
     </div>
     <div class="col col-xs-5">
       <div class="form-group zip">
         <%= f.label :billing_zip, 'Zip Code' %>
+        <label class="error">Required</label>
         <%= f.text_field :billing_zip, 'ng-model' => 'order.billing_zip', :required => true %>
       </div>
     </div>
   </div>
   <div class="form-group country">
     <%= f.label :billing_country, 'Country' %>
+    <label class="error">Required</label>
     <%= f.text_field :billing_country, 'ng-model' => 'order.billing_country', :required => true  %>
   </div>
 </div>
@@ -38,5 +43,5 @@
     <h2>${{ totalPrice() | number:2 }}</h2>
   </div>
   <a class="btn btn-default prev">Back</a>
-  <a class="btn btn-primary next" ng-click='submitForm(order)'>Confirm Order</a>
+  <a class="btn btn-primary" ng-click='submitForm(order)'>Confirm Order</a>
 </div>
