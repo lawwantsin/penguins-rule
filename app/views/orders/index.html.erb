@@ -15,21 +15,13 @@
 
         <div class="col col-xs-12 col-sm-6 col-sm-pull-6">
           <div class="cta">
-            <p>
-              Fold-Out Penguin Joice Box.
-            </p>
-            <p>
-              100% Fruit Juice.
-            </p>
-            <p>
-              For the coolest kids in the lunchroom.
-            </p>
+            <p>Fold-Out Penguin Joice Box</p>
+            <p>100% Fruit Juice.</p>
+            <p>For the coolest kids in the lunch room.</p>
             <%= image_tag 'penguin-3-colors.png', id:'colors' %>
             <div class="buy">
-              <p>
-                4 colors to choose from!
-              </p>
-              <h2>$2.99 each</h2>
+              <p>4 colors to choose from!</p>
+              <h2>$<%= Order::PRICE %> each</h2>
             </div>
           </div>
         </div>
@@ -38,9 +30,12 @@
     </div>
     <div class="col col-xs-12 col-sm-6">
       <ul class='egg-holder'>
-        <h1>Look who just got theirs...</h1>
+        <h1>Look Who Just Got Theirs</h1>
         <%- @recent_orders.each do |order| %>
           <li class='egg'>
+            <div class="timestamp">
+              <%= timeago_tag order.created_at, nojs: false %>
+            </div>
             <div class="quantity">
               <%= order.quantity %>
             </div>

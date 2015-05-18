@@ -29,8 +29,7 @@ $(document).ready(function() {
   });
 
   // Clouds animation
-    duration = 600;
-    TweenLite.to('.cloud-panel', duration, {left: '-100%'});
+  $('.cloud-panel').addClass('breeze');
 })
 
 
@@ -39,7 +38,7 @@ angular.module('bevTest', []);
 angular.module('bevTest').controller('OrderCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.order = {
-    quantity: 1
+    quantity_black: 6
   };
 
   $scope.submitForm = function() {

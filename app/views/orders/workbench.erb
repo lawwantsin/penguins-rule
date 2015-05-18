@@ -1,0 +1,6 @@
+<%= form_for Order.new do |f| %>
+  <%= render partial: 'step_1', locals: {f: f} %>
+  <%= render partial: 'step_2', locals: {f: f} %>
+  <%= render partial: 'step_3', locals: {f: f} %>
+  <%= render partial: 'step_4', locals: {f: f} %>
+<% end %>

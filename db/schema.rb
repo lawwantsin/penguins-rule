@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515130451) do
+ActiveRecord::Schema.define(version: 20150518013919) do
 
   create_table "orders", force: :cascade do |t|
     t.string   "name_on_card",     limit: 255
@@ -29,9 +29,13 @@ ActiveRecord::Schema.define(version: 20150515130451) do
     t.string   "shipping_state",   limit: 255
     t.string   "shipping_zip",     limit: 255
     t.string   "shipping_country", limit: 255
-    t.integer  "quantity",         limit: 4
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                                                       null: false
+    t.datetime "updated_at",                                                       null: false
+    t.integer  "quantity_black",   limit: 4,                           default: 0
+    t.integer  "quantity_blue",    limit: 4,                           default: 0
+    t.integer  "quantity_red",     limit: 4,                           default: 0
+    t.integer  "quantity_green",   limit: 4,                           default: 0
+    t.decimal  "price",                        precision: 5, scale: 2
   end
 
 end

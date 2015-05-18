@@ -1,9 +1,9 @@
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h4 class="modal-title">Payment Info</h4>
+  <h4 class="modal-title">Where Should We Send Them?</h4>
 </div>
 
-<div class="modal-body">
+<div class="modal-body step2">
   <div class="form-group street">
     <%= f.label :shipping_name, "Ship to Name" %>
     <%= f.text_field :shipping_name, 'ng-model' => 'order.shipping_name' %>
@@ -17,13 +17,13 @@
     <%= f.text_field :shipping_city, 'ng-model' => 'order.shipping_city' %>
   </div>
   <div class="row">
-    <div class="col col-xs-8">
+    <div class="col col-xs-7">
       <div class="form-group state">
         <%= f.label :shipping_state, "State" %>
         <%= f.text_field :shipping_state, 'ng-model' => 'order.shipping_state' %>
       </div>
     </div>
-    <div class="col col-xs-4">
+    <div class="col col-xs-5">
       <div class="form-group zip">
         <%= f.label :shipping_zip, "Zip Code" %>
         <%= f.text_field :shipping_zip, 'ng-model' => 'order.shipping_zip' %>

@@ -1,12 +1,36 @@
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h4 class="modal-title">How Many?</h4>
+  <h4 class="modal-title">How Many of Each Color?</h4>
 </div>
 
-<div class="modal-body">
-  <div class="form-group qty">
-    <label for=""></label>
-    <%= f.text_field :quantity, 'ng-model' => 'order.quantity' %>
+<div class="modal-body step1">
+  <%= image_tag 'penguin-3-colors.png', id: 'colors' %>
+  <%= image_tag 'penguin-1-big.png', id: 'big-bg-bird' %>
+  <div class="row">
+    <div class="col col-xs-6 col-sm-3">
+      <div class="form-group qty">
+        <%= f.label :quantity_black, "Black", class: 'black' %>
+        <%= f.text_field :quantity_black, 'ng-model' => 'order.quantity_black' %>
+      </div>
+    </div>
+    <div class="col col-xs-6 col-sm-3">
+      <div class="form-group qty">
+        <%= f.label :quantity_blue, "Blue", class: 'blue' %>
+        <%= f.text_field :quantity_blue, 'ng-model' => 'order.quantity_blue' %>
+      </div>
+    </div>
+    <div class="col col-xs-6 col-sm-3">
+      <div class="form-group qty">
+        <%= f.label :quantity_red, "Red", class: 'red' %>
+        <%= f.text_field :quantity_red, 'ng-model' => 'order.quantity_red' %>
+      </div>
+    </div>
+    <div class="col col-xs-6 col-sm-3">
+      <div class="form-group qty">
+        <%= f.label :quantity_green, "Green", class: 'green' %>
+        <%= f.text_field :quantity_green, 'ng-model' => 'order.quantity_green' %>
+      </div>
+    </div>
   </div>
 </div>
 

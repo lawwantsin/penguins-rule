@@ -27,7 +27,7 @@ class Order < ActiveRecord::Base
 
   after_create :push_data
 
-
+  PRICE = 2.99
 
   def push_data
 
@@ -41,6 +41,10 @@ class Order < ActiveRecord::Base
 
   end
 
+  def quantity
+    quantity_red + quantity_black + quantity_green + quantity_blue
+  end
+
   def first_name
 
     self.shipping_name.split(' ').first.capitalize
@@ -50,8 +54,8 @@ class Order < ActiveRecord::Base
   def self.recent_orders
 
     return order('created_at DESC')
-              .limit(20)
-              .select('shipping_name, quantity, shipping_city, shipping_name, created_at, shipping_country')
+              .limit(10)
+              .select('shipping_name, quantity_red, quantity_black, quantity_green, quantity_blue, shipping_city, shipping_name, created_at, shipping_country')
               .all
 
   end

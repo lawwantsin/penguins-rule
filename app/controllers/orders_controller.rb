@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
+
   def index
     @recent_orders = Order.recent_orders
+  end
+
+  def workbench
   end
 
   def create
@@ -31,7 +35,10 @@ class OrdersController < ApplicationController
               :shipping_zip,
               :shipping_country,
 
-              :quantity)
+              :quantity_black,
+              :quantity_blue,
+              :quantity_red,
+              :quantity_green)
 
   end
 
