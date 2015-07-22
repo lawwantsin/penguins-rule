@@ -1,4 +1,4 @@
-# Tech Test for Varsity Tutors
+# Example App for Beverages
 
 ## Local Setup
 
