@@ -31,3 +31,7 @@ All functionality is in the _orders_ stack.
 Type `rake fake_orders` in Terminal.
 
 Runs on an endless loop.  Control+C to quit.
+
+## Deploy to Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
